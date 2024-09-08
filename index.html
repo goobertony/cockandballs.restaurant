@@ -116,10 +116,13 @@ p{font-size: xx-large;}
               audioElement.muted = false;
               muteButton.textContent = 'Mute';
               muteButton.classList.remove('muted');
+		  document.getElementById('background_audio').muted = false;
           } else {
               audioElement.muted = true;
               muteButton.textContent = 'Unmute';
               muteButton.classList.add('muted');
+		  document.getElementById('background_audio').muted = true;
+		  
           }
       });
   </script>
