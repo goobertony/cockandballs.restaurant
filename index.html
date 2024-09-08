@@ -75,21 +75,59 @@ p{font-size: xx-large;}
 }
 
 .rowan {width: 165px;} .cool {margin: 0px;}
+
+#mute-button {
+            padding: 10px 15px;
+            font-size: 10px;
+            cursor: pointer;
+            background-color: #ff6060;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #mute-button.muted {
+            background-color: #6c757d;
+        }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lugrasimo&display=swap" rel="stylesheet">
 </head>
 
+
 <body>
   <div id="container">
     <h1>Welcome To</h1> 
     <img alt="cockandballs.restaurant" src="images/costume31.webp" style="image-rendering: pixelated; width: 120%; height: 120%;">
 
+    <audio id="background-music" src="pizzatheme.wav" autoplay loop>
+      Your browser does not support the audio element.
+  </audio>
+  <button id="mute-button">Mute</button>
+
+  <script>
+      const audioElement = document.getElementById('background-music');
+      const muteButton = document.getElementById('mute-button');
+
+      muteButton.addEventListener('click', () => {
+          if (audioElement.muted) {
+              audioElement.muted = false;
+              muteButton.textContent = 'Mute';
+              muteButton.classList.remove('muted');
+          } else {
+              audioElement.muted = true;
+              muteButton.textContent = 'Unmute';
+              muteButton.classList.add('muted');
+          }
+      });
+  </script>
+
+
     <p>Hows it goin, im tonii, welcome to cockandballs.restaurant's shoddy homepage. how'd you get here anyway? doesn't matter to me really.</p>
     <p>This site is a project between tons of my friends to just have fun and make cool good cool cool stuffs cool.</p>
 
     <h1>The Menu</h1>
+
 
     <h2>Tonii</h2>
     <p>Hi, I'm the owner, and the person. I do the things.</p>
