@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+}
+
+.header a{
+    font-size: large;
+    color: #832323;
+    margin: 10px;
+}
+
+.kitchen {
+    position: absolute;
+    margin: 10px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
