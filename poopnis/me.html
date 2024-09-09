@@ -40,12 +40,18 @@ this website will be styled compleatly differently. i never use divs or things l
             return { x, y };
         }
 
+        function getRandomZIndex() {
+            return Math.floor(Math.random() * 100); // Random z-index between 0 and 99
+        }
+
         function moveDivs() {
             const divs = document.querySelectorAll('.randomDiv');
             divs.forEach(div => {
                 const { x, y } = getRandomPosition();
+                const zIndex = getRandomZIndex();
                 div.style.left = `${x}px`;
                 div.style.top = `${y}px`;
+                div.style.zIndex = zIndex;
             });
         }
 
