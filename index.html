@@ -100,27 +100,10 @@ p{font-size: xx-large;}
   <div id="container">
     <h1>Welcome To</h1> 
     <img alt="cockandballs.restaurant" src="images/logo.webp" style="image-rendering: pixelated; width: 120%; height: 120%;">
-     <audio id="background-music" src="pizzatheme.wav" autoplay loop>
-      <p> AW... welp drat. you cant hear the misuc because your browser dosent support the audio element. just, uh, imagine relazing cafe jass... thanks!</p>
-  </audio>
-  <button id="mute-button">Mute</button>
 
-  <script>
-      const audioElement = document.getElementById('background-music');
-      const muteButton = document.getElementById('mute-button');
-
-      muteButton.addEventListener('click', () => {
-          if (audioElement.muted) {
-              audioElement.muted = false;
-              muteButton.textContent = 'Mute';
-              muteButton.classList.remove('muted');
-          } else {
-              audioElement.muted = true;
-              muteButton.textContent = 'Unmute';
-              muteButton.classList.add('muted');
-          }
-      });
-  </script>
+ 
+  <audio style="width:200px;" autoplay="" controls="" loop="" src="/pizzatheme.wav"> </audio>
+  
 
 
     <p>Hows it goin, im tonii, welcome to cockandballs.restaurant's shoddy homepage. how'd you get here anyway? doesn't matter to me really.</p>
