@@ -101,7 +101,7 @@ p{font-size: xx-large;}
     <h1>Welcome To</h1> 
     <img alt="cockandballs.restaurant" src="images/logo.webp" style="image-rendering: pixelated; width: 120%; height: 120%;">
 
-    <audio id="background-music" autoplay loop>
+    <audio id="background-music" oncanplay="myFunction()" loop>
 	    <source src="/pizzatheme.wav"/>
      <p> AW... welp drat. you cant hear the misuc because your browser dosent support the audio element. just, uh, imagine relazing cafe jass... thanks!</p>
   </audio>
@@ -125,8 +125,9 @@ p{font-size: xx-large;}
 		  
           }
       });
-  </script><script>window.onload = function() {
-    document.getElementById("background_audio").play();
+  </script><script>
+	  function myFunction() {
+  document.getElementById("background-music").play(); 
 }</script>
 
 
