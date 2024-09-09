@@ -101,48 +101,7 @@ p{font-size: xx-large;}
     <h1>Welcome To</h1> 
     <img alt="cockandballs.restaurant" src="images/logo.webp" style="image-rendering: pixelated; width: 120%; height: 120%;">
 
- 
-    <audio id="background-music" autoplay muted loop>
-	    <source src="/pizzatheme.wav"/>
-     <p> AW... welp drat. you cant hear the misuc because your browser dosent support the audio element. just, uh, imagine relazing cafe jass... thanks!</p>
-  </audio>
-  <button id="mute-button">Mute</button>
-  
-    <script>
-      const audioElement = document.getElementById('background-music');
-      const muteButton = document.getElementById('mute-button');
-
-      muteButton.addEventListener('click', () => {
-          if (audioElement.muted) {
-              audioElement.muted = false;
-              muteButton.textContent = 'Mute';
-              muteButton.classList.remove('muted');
-		  document.getElementById('background_audio').muted = false;
-          } else {
-              audioElement.muted = true;
-              muteButton.textContent = 'Unmute';
-              muteButton.classList.add('muted');
-		  document.getElementById('background_audio').muted = true;
-		  
-          }
-      });
-  </script><script>
-	  window.onload = function() {
-	  var video = document.querySelector('audio');
-var promise = video.play();
-
-if (promise !== undefined) {
-  promise.then(_ => {
-	  video.muted = false;
-   document.getElementById("background-music").play();
-  }).catch(error => {
-  video.muted = false;  document.getElementById("background-music").play();
-  });
-}
-		  }
-  </script>
-  
-
+    <audio style="width:200px;" autoplay="" controls="" loop="" src="/pizzatheme.wav"> </audio>
 
     <p>Hows it goin, im tonii, welcome to cockandballs.restaurant's shoddy homepage. how'd you get here anyway? doesn't matter to me really.</p>
     <p>This site is a project between tons of my friends to just have fun and make cool good cool cool stuffs cool.</p>
