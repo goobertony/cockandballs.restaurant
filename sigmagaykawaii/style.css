@@ -1,10 +1,7 @@
-/* cont = container */
-
-:root{
-    /* cores  */
-    --bg-color: #ffffff
+:root {
+    /* cores */
+    --bg-color: #ffffff;
 }
-
 
 body, html {
     margin: 0;
@@ -17,15 +14,17 @@ body, html {
     box-sizing: border-box;
 }
 
+/* containters */
 .cont-intro,
 .cont-aboutme,
 .cont-howitstarted,
 .cont-social,
 .cont-code,
+.cont-arts,
+.cont-cat,
 .cont-projects {
     margin: 20px auto;
     padding: 20px;
-    box-sizing: border-box;
     border: 2px solid;
     border-radius: 25px;
     max-width: 900px;
@@ -33,117 +32,115 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .cont-aboutme {
     align-items: flex-start;
 }
 
-
 .cont-aboutme p {
     margin: 5px 0;
-    padding: 0;
 }
 
-.cont-arts,
-.cont-cat {
-    margin: 20px auto;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 2px solid;
-    border-radius: 25px;
-    max-width: 900px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
-}
-
-.arts-grid {
+/* image grids */
+.arts-grid, .cat-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     justify-items: center;
 }
 
-.arts-grid img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-}
-
-.cont-arts img {
-    max-width: 100%;
+/* images */
+.arts-grid img, 
+.cat-grid img, 
+.cont-arts img, 
+.cont-cat img, 
+.cont-projects img {
+    max-width: 90%;
     height: auto;
     display: block;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-.cont-arts a {
-    display: block;
-    justify-items: center;
-
-}
-
-.cont-cat img {
-    max-width: 70%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.cat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    justify-items: center;
-}
-
-.cont-arts img:last-child {
-    margin-bottom: 0;
-}
-
-.cont-projects h3, a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
+/* estilos */
 .cont-projects {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    flex-direction: column;
+    text-align: center;
 }
 
-.cont-projects .projects-pinble img {
-    max-width: 50%;
-    border-radius: 10px;
-    margin: 10px auto;
-    display: block;
+.cont-projects h3,
+.cont-projects a {
+    text-align: center;
 }
 
-.cont-projects .projects-aliensplease img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin: 10px auto;
-    display: block;
+.cont-projects p {
+    text-align: left;
 }
 
-.cont-projects .projects-moontalk img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin: 10px auto;
-    display: block;
+.cont-projects a {
+    margin: 10px 0; 
+    color: inherit; 
+    text-decoration: none; 
+    display: inline-block;
 }
-.cont-projects .projects-purrgy img {
-    max-width: 100%;
-    border-radius: 10px;
+
+.cont-projects a:hover {
+    text-decoration: underline;
+}
+
+.cont-projects img {
+    max-height: 400px; 
+    object-fit: cover;
     margin: 10px auto;
-    display: block;
+}
+
+/* social media links */
+.cont-social a,
+.cont-projects a {
+    margin: 10px 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.cont-social a:hover {
+    text-decoration: underline;
+}
+
+/* ajuste pra telas menores */
+@media (max-width: 768px) {
+    .cont-intro,
+    .cont-aboutme,
+    .cont-howitstarted,
+    .cont-social,
+    .cont-code,
+    .cont-arts,
+    .cont-cat,
+    .cont-projects {
+        width: 90%; 
+        padding: 10px; 
+    }
+
+    .arts-grid, .cat-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .arts-grid, .cat-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        gap: 10px;
+    }
+
+    .arts-grid img, .cat-grid img {
+        width: 70%;
+        flex-shrink: 0;
+    }
+
+    .cont-arts img, .cont-cat img {
+        max-width: 100%;
+    }
 }
