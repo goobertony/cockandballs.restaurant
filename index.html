@@ -133,11 +133,9 @@ var promise = video.play();
 
 if (promise !== undefined) {
   promise.then(_ => {
-    // Autoplay started!
+   document.getElementById("background-music").play();
   }).catch(error => {
  document.getElementById("background-music").play();
-
-    // Show something in the UI that the video is muted
   });
 }
 		  }
