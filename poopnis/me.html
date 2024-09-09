@@ -3,19 +3,62 @@
 
 </head><body>
 this website will be styled compleatly differently. i never use divs or things like that sigh
+    <!--thanks to ssbarbee on stackoverflow for all the code to make this mess work!-->
 <img src="/poopnis/images/aboutmeimage.png">
     
-<div id="pee">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </div>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Div Movement</title>
+    <style>
+        .randomDiv {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            transition: all 2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="randomDiv"></div>
+    <div class="randomDiv"></div>
+    <div class="randomDiv"></div>
+    <div class="randomDiv"></div>
+    <div class="randomDiv"></div>
+
+    <script>
+        function getRandomPosition() {
+            const x = Math.floor(Math.random() * window.innerWidth);
+            const y = Math.floor(Math.random() * window.innerHeight);
+            return { x, y };
+        }
+
+        function getRandomZIndex() {
+            return Math.floor(Math.random() * 100); // Random z-index between 0 and 99
+        }
+
+        function moveDivs() {
+            const divs = document.querySelectorAll('.randomDiv');
+            divs.forEach(div => {
+                const { x, y } = getRandomPosition();
+                const zIndex = getRandomZIndex();
+                div.style.left = `${x}px`;
+                div.style.top = `${y}px`;
+                div.style.zIndex = zIndex;
+            });
+        }
+
+        setInterval(moveDivs, 3000); // Move every 3 seconds
+    </script>
+</body>
+</html>
 
     </body>
 
