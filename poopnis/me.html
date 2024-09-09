@@ -6,139 +6,54 @@ this website will be styled compleatly differently. i never use divs or things l
     <!--thanks to ssbarbee on stackoverflow for all the code to make this mess work!-->
 <img src="/poopnis/images/aboutmeimage.png">
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div id="Brands">
-  <ul>
-    <li><a>1</a></li>
-    <li><a>2</a></li>
-    <li><a>3</a></li>
-    <li><a>4</a></li>
-    <li><a>5</a></li>
-    <li><a>6</a></li>
-    <li><a>7</a></li>
-    <li><a>8</a></li>
-    <li><a>9</a></li>
-    <li><a>10</a></li>
-  </ul>
-</div>
-    
-    
-    
-    
-    
-    
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Div Movement</title>
+    <style>
+        .randomDiv {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            transition: all 2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="randomDiv"></div>
+    <div class="randomDiv"></div>
+    <div class="randomDiv"></div>
+    <div class="randomDiv"></div>
+    <div class="randomDiv"></div>
+
     <script>
-    
-    
- // hash to keep the status for animations
-// this is to prevent 2 elements from entering animation at same time
-// example if 2 and 5 are being animated we don't animate them
-// in the next loop
-var elementsStatus = {}
-
-// initialize the hash 
-for(var i=0;i<$('ul li').length;i++) {
-	// element is not fading/animating
-	elementsStatus[i.toString()] = false
-}
-
-// utility - swaps 2 nodes in DOM
-// https://stackoverflow.com/a/19033868/1861016
-function swapNodes(a, b) {
-    a = $(a); b = $(b);
-    var tmp = $('<span>').hide();
-    a.before(tmp);
-    b.before(a);
-    tmp.replaceWith(b);
-};
-
-// utility - random element from array
-// https://stackoverflow.com/a/5915122/1861016
-function randomElementFromList(items) {
-	return items[Math.floor(Math.random()*items.length)];
-}
-
-// utility gets random numbers in range
-function randomIntFromInterval(min, max) {  
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-
-
-// searches inside elementsStatus hash to find
-// elements that are not animating
-// if we find 2 elements we return {index1, index2}
-function getElementsForSwap() {
-	var notFadingElements = Object.keys(elementsStatus).filter(function(key) { return elementsStatus[key] === false; })
-  if(notFadingElements.length < 2) {
-  	return {}
-  }
-	var item1 = randomElementFromList(notFadingElements)
-  var item2 = randomElementFromList(notFadingElements)
-  while(item1 === item2) {
-  	item2 = randomElementFromList(notFadingElements)
-  }
-  return {
-  	index1: item1,
-    index2: item2
-  }
-}
-
-// requirement 1:
-// performs animation fadeOut
-// after the first element has finished fading out
-// we will swap the nodes in DOM
-// and fadeIn both elements
-function animateAndSwapElements(index1, index2) {
-	var list = $('ul');
-  var element1 = $('li', list).eq(index1)
-  var element2 = $('li', list).eq(index2)
-  element1.fadeOut({
-  	done: function() {
-      swapNodes(element1, element2)
-      element1.fadeIn({
-      	done: function() {
-    			elementsStatus[index1] = false;
+        function getRandomPosition() {
+            const x = Math.floor(Math.random() * window.innerWidth);
+            const y = Math.floor(Math.random() * window.innerHeight);
+            return { x, y };
         }
-      })
-    }
-  })
-  element2.fadeOut({
-  	done: function() {
-      element2.fadeIn({
-      	done: function() {
-    			elementsStatus[index2] = false;
+
+        function moveDivs() {
+            const divs = document.querySelectorAll('.randomDiv');
+            divs.forEach(div => {
+                const { x, y } = getRandomPosition();
+                div.style.left = `${x}px`;
+                div.style.top = `${y}px`;
+            });
         }
-      })
-    }
-  })
-}
 
-// requirment 2: performs the animation for 2 elements after random amount of time
-function performSwapAfterRandomTime(index1, index2) {
-  // this will perform swap of 2 elements with animation
-  // after random amount of time.
-	 {
-  	animateAndSwapElements(index1, index2)
-  }, randomIntFromInterval(1000, 3000))
-}
+        setInterval(moveDivs, 3000); // Move every 3 seconds
+    </script>
+</body>
+</html>
 
-// main loop
-// search for elements to swap
-// and swap them after random amount of time.
-setInterval(function() {
-	var elementsForSwap = getElementsForSwap()
-  // make sure we have something to swap
-  // sanity check
-  if(elementsForSwap.index1 === undefined || elementsForSwap.index2 === undefined) {
-  	return;
-  }
-  // swapping
-  elementsStatus[elementsForSwap.index1] = true
-  elementsStatus[elementsForSwap.index2] = true
-  performSwapAfterRandomTime(elementsForSwap.index1, elementsForSwap.index2)
-}, 500);
-</script>
     </body>
 
 
