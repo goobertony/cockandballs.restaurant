@@ -127,8 +127,8 @@ p{font-size: xx-large;}
           }
       });
   </script><script>
-	  function myFunction() {
-  document.getElementById("background-music").play(); 
+	  if (navigator.getAutoplayPolicy("mediaelement") === "disallowed") {
+document.getElementById("background-music").play(); 
 }</script>
   
 
