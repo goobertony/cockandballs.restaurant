@@ -102,7 +102,7 @@ p{font-size: xx-large;}
     <img alt="cockandballs.restaurant" src="images/logo.webp" style="image-rendering: pixelated; width: 120%; height: 120%;">
 
  
-    <audio id="background-music" autoplay loop>
+    <audio id="background-music" autoplay muted loop>
 	    <source src="/pizzatheme.wav"/>
      <p> AW... welp drat. you cant hear the misuc because your browser dosent support the audio element. just, uh, imagine relazing cafe jass... thanks!</p>
   </audio>
@@ -133,9 +133,10 @@ var promise = video.play();
 
 if (promise !== undefined) {
   promise.then(_ => {
+	  video.muted = false;
    document.getElementById("background-music").play();
   }).catch(error => {
-
+  video.muted = false;
   });
 }
 		  }
