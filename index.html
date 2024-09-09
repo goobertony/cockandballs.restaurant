@@ -127,12 +127,19 @@ p{font-size: xx-large;}
           }
       });
   </script><script>
-	  window.onload = function() {
-  document.getElementById("background-music").play(); 
+	  var video = document.querySelector('.background-music');
+var promise = video.play();
+
+if (promise !== undefined) {
+  promise.then(_ => {
+    // Autoplay started!
+  }).catch(error => {
+ document.getElementById("background-music").play();
+
+    // Show something in the UI that the video is muted
+  });
 }
-	  if (navigator.getAutoplayPolicy("mediaelement") === "disallowed") {
-document.getElementById("background-music").play(); 
-}</script>
+  </script>
   
 
 
