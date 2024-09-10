@@ -36,9 +36,9 @@ this website will be styled compleatly differently. i never use divs or things l
 
     <script>
 function getRandomPosition() {
-    const x = Math.floor(Math.random() * window.innerWidth);
-    const y = Math.floor(Math.random() * window.innerHeight);
-    return { x: x / 4, y: y / 2 };
+    const x = Math.floor(Math.random() * window.innerWidth) / 2;
+    const y = Math.floor(Math.random() * window.innerHeight) / 2;
+    return { x, y };
 }
 
         function getRandomZIndex() {
