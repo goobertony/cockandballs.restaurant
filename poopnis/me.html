@@ -5,6 +5,10 @@
     <title>THE wowza savings event is on now!</title>
     
     <style>
+html { scrollbar-width: none; }
+body { -ms-overflow-style: none ;overflow-x: hidden; /*hides horizontal scrollbar*/
+    overflow-y: hidden; /*hides vertical scrollbar*/ }
+body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
         .randomDiv {
             width: 50px;
             height: 50px;
@@ -36,9 +40,8 @@ this website will be styled compleatly differently. i never use divs or things l
 
     <script>
 function getRandomPosition() {
-    const x = Math.floor(Math.random() * window.innerWidth) / 1.5;
-    const y = Math.floor(Math.random() * window.innerHeight) / 1.5;
-    return { x, y };
+    const x = Math.floor(Math.random() * window.innerWidth);
+    const y = Math.floor(Math.random() * window.innerHeight);
 }
 
         function getRandomZIndex() {
