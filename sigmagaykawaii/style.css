@@ -9,8 +9,8 @@
     /* cores */
     --w: #ffffff;
     --button: #2387d8;
-    --gradient-start: #535557e6;
-    --gradient-end: #0e0f0fe6;
+    --gradient-start: rgba(83, 85, 87, 0.902);
+    --gradient-end: rgba(14, 15, 15, 0.902);
 }
 
 body, html {
