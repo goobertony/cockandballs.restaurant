@@ -35,11 +35,11 @@ this website will be styled compleatly differently. i never use divs or things l
     <div class="randomDiv"></div>
 
     <script>
-        function getRandomPosition() {
-            const x = Math.floor(Math.random() * window.innerWidth);
-            const y = Math.floor(Math.random() * window.innerHeight);
-            return { x, y };
-        }
+function getRandomPosition() {
+    const x = Math.floor(Math.random() * window.innerWidth);
+    const y = Math.floor(Math.random() * window.innerHeight);
+    return { x: x / 2, y: y / 2 };
+}
 
         function getRandomZIndex() {
             return Math.floor(Math.random() * 100); // Random z-index between 0 and 99
