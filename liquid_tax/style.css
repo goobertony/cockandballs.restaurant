@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Myriad Apple';
-    src: url(font/MYRIADAT.TTF) format('truetype');
+    font-family: 'Pixeloid Sans';
+    src: url(font/PixeloidSans-mLxMm.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,12 +17,12 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: url(images/bg.jpg);
+    background-image: url(images/bg.png);
     background-size: 100%;
-    font-family: "Myriad Apple", sans-serif;
+    font-family: "Pixeloid Sans", sans-serif;
 }
 
-body, html p, h1, h2, h3 {
+body, html p, h1, h2, h3, h6 {
     color: var(--w)
 }
 
