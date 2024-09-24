@@ -85,7 +85,8 @@ body, html a {
 
 .cont-aboutme button,
 .cont-projects button,
-.cont-stuffilike button {
+.cont-stuffilike button,
+.cont-social button {
     cursor: pointer;
 }
 
