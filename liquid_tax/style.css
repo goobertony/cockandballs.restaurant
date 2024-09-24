@@ -17,7 +17,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: url(images/bg.png);
+    background-image: url(images/bg.webp);
     background-size: 100%;
     font-family: "Pixeloid Sans", sans-serif;
 }
