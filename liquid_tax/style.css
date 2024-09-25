@@ -8,9 +8,18 @@
 :root {
     /* cores */
     --w: #ffffff;
-    --button: #2387d8;
+    --b: #000000;
+    --btn: #2387d8;
+    --activated: #16f050;
+    --btn-gradient-start: #af40ff;
+    --btn-gradient-end: #5b42f3;
     --gradient-start: #535557e6;
     --gradient-end: #0e0f0fe6;
+    --bsk: #16e5e5;
+    --tg: #11b2b2;
+    --rd: #FF5700;
+    --px: #d12e2e;
+    --gh: #24292e;
 }
 
 body, html {
@@ -22,13 +31,13 @@ body, html {
     font-family: "Pixeloid Sans", sans-serif;
 }
 
-
 body, html p, h1, h2, h3, h6 {
-    color: var(--w)
+    color: var(--w);
 }
 
 body, html a {
-    color: var(--button)
+    color: var(--btn);
+
 }
 
 *, *::before, *::after {
@@ -82,13 +91,98 @@ body, html a {
 }
 
 /* buttons */
-
 .cont-aboutme button,
 .cont-projects button,
-.cont-stuffilike button,
-.cont-social button {
+.cont-stuffilike button {
     cursor: pointer;
+    background-image: linear-gradient(144deg, var(--btn-gradient-start) 30%, var(--btn-gradient-end) 100%);
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    color: var(--w);
+    font-family: "Pixeloid Sans", sans-serif;
 }
+
+.btn-bsk button {
+    cursor: pointer;
+    background-color: var(--bsk);
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    color: var(--b);
+    transition-duration: 0.4s;
+    font-family: "Pixeloid Sans", sans-serif;
+}
+
+.btn-tg button {
+    cursor: pointer;
+    background-color: var(--tg);
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    color: var(--b);
+    transition-duration: 0.4s;
+    font-family: "Pixeloid Sans", sans-serif;
+}
+
+.btn-rd button {
+    cursor: pointer;
+    background-color: var(--rd);
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    color: var(--b);
+    transition-duration: 0.4s;
+    font-family: "Pixeloid Sans", sans-serif;
+}
+
+.btn-px button {
+    cursor: pointer;
+    background-color: var(--px);
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    color: var(--w);
+    transition-duration: 0.4s;
+    font-family: "Pixeloid Sans", sans-serif;
+}
+
+.btn-gh button {
+    cursor: pointer;
+    background-color: var(--gh);
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    color: var(--w);
+    transition-duration: 0.4s;
+    font-family: "Pixeloid Sans", sans-serif;
+}
+
+.btn-bsk button:hover {
+    background-color: var(--gradient-start);
+    color: var(--bsk);
+}
+
+.btn-tg button:hover {
+    background-color: var(--gradient-start);
+    color: var(--tg);
+}
+
+.btn-rd button:hover {
+    background-color: var(--gradient-start);
+    color: var(--rd);
+}
+
+.btn-px button:hover {
+    background-color: var(--gradient-start);
+    color: var(--px);
+}
+
+.btn-gh button:hover {
+    background-color: var(--gradient-start);
+    color: var(--gh);
+}
+
 
 /* image grids */
 .arts-grid, .cat-grid {
@@ -118,6 +212,7 @@ body, html a {
     border-radius: 5px;
     margin-bottom: 10px;
 }
+
 /* estilos */
 .cont-projects {
     text-align: center;
@@ -141,6 +236,7 @@ body, html a {
 
 .cont-projects a:hover {
     text-decoration: underline;
+    color: var(--activated);
 }
 
 .cont-projects img {
@@ -166,6 +262,7 @@ body, html a {
 .cont-projects a button {
     opacity: 0.5;
 }
+
 /* ajuste pra telas menores */
 @media (max-width: 768px) {
     .cont-intro,
