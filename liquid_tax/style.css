@@ -22,12 +22,13 @@
     --gh: #24292e;
 }
 
+/* website config */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     background-image: url(images/bg.webp);
-    background-size: 100%;
+    background-size: cover;
     font-family: "Pixeloid Sans", sans-serif;
 }
 
@@ -37,7 +38,6 @@ body, html p, h1, h2, h3, h6 {
 
 body, html a {
     color: var(--btn);
-
 }
 
 *, *::before, *::after {
@@ -45,11 +45,14 @@ body, html a {
 }
 
 .cont-aboutme h6 {
-    margin-top: -15px;
-    margin-bottom: 5px;
+    margin: -15px 0 5px;
 }
 
-/* containters */
+.blank {
+    opacity: 0;
+}
+
+/* containers */
 .cont-intro,
 .cont-aboutme,
 .cont-stuffilike,
@@ -68,7 +71,6 @@ body, html a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
     background-image: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
 }
 
@@ -85,107 +87,62 @@ body, html a {
     margin: 5px 0;
 }
 
-.blank {
-    margin-bottom: 20px;
-    opacity: 0;
+.cont-social a, button {
+    margin: 10px 0;
 }
 
 /* buttons */
+button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    font-family: "Pixeloid Sans", sans-serif;
+    transition-duration: 0.4s;
+}
+
 .cont-aboutme button,
 .cont-projects button,
 .cont-stuffilike button {
-    cursor: pointer;
     background-image: linear-gradient(144deg, var(--btn-gradient-start) 30%, var(--btn-gradient-end) 100%);
-    border-radius: 5px;
-    border: none;
-    padding: 8px;
     color: var(--w);
-    font-family: "Pixeloid Sans", sans-serif;
 }
 
 .btn-bsk button {
-    cursor: pointer;
     background-color: var(--bsk);
-    border-radius: 5px;
-    border: none;
-    padding: 8px;
     color: var(--b);
-    transition-duration: 0.4s;
-    font-family: "Pixeloid Sans", sans-serif;
 }
 
 .btn-tg button {
-    cursor: pointer;
     background-color: var(--tg);
-    border-radius: 5px;
-    border: none;
-    padding: 8px;
     color: var(--b);
-    transition-duration: 0.4s;
-    font-family: "Pixeloid Sans", sans-serif;
 }
 
 .btn-rd button {
-    cursor: pointer;
     background-color: var(--rd);
-    border-radius: 5px;
-    border: none;
-    padding: 8px;
     color: var(--b);
-    transition-duration: 0.4s;
-    font-family: "Pixeloid Sans", sans-serif;
 }
 
 .btn-px button {
-    cursor: pointer;
     background-color: var(--px);
-    border-radius: 5px;
-    border: none;
-    padding: 8px;
     color: var(--w);
-    transition-duration: 0.4s;
-    font-family: "Pixeloid Sans", sans-serif;
 }
 
 .btn-gh button {
-    cursor: pointer;
     background-color: var(--gh);
-    border-radius: 5px;
-    border: none;
-    padding: 8px;
     color: var(--w);
-    transition-duration: 0.4s;
-    font-family: "Pixeloid Sans", sans-serif;
 }
 
-.btn-bsk button:hover {
-    background-color: var(--gradient-start);
-    color: var(--bsk);
-}
-
-.btn-tg button:hover {
-    background-color: var(--gradient-start);
-    color: var(--tg);
-}
-
-.btn-rd button:hover {
-    background-color: var(--gradient-start);
-    color: var(--rd);
-}
-
-.btn-px button:hover {
-    background-color: var(--gradient-start);
-    color: var(--px);
-}
-
+.btn-bsk button:hover,
+.btn-tg button:hover,
+.btn-rd button:hover,
+.btn-px button:hover,
 .btn-gh button:hover {
-    background-color: var(--gradient-start);
-    color: var(--gh);
+    background-color: var(--btn-gradient-start);
 }
-
 
 /* image grids */
-.arts-grid, .cat-grid {
+.arts-grid, .cat-grid, .scroll-item, .scroll-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
@@ -197,7 +154,8 @@ body, html a {
 .cat-grid img, 
 .cont-arts img, 
 .cont-cat img, 
-.cont-projects img {
+.cont-projects img,
+.cont-aboutme img {
     max-width: 90%;
     height: auto;
     display: block;
@@ -206,11 +164,7 @@ body, html a {
 }
 
 .cont-aboutme img {
-    align-items: right;
     max-width: 165px;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 /* estilos */
@@ -228,15 +182,12 @@ body, html a {
 }
 
 .cont-projects a {
-    margin: 10px 0; 
-    color: inherit; 
-    text-decoration: none; 
+    margin: 10px 0;
+    color: inherit;
+    text-decoration: none;
     display: inline-block;
-}
-
-.cont-projects a:hover {
-    text-decoration: underline;
-    color: var(--activated);
+    opacity: 1;
+    transition: background-color 0.3s ease;
 }
 
 .cont-projects img {
@@ -258,12 +209,7 @@ body, html a {
     text-decoration: underline;
 }
 
-/* social media style */
-.cont-projects a button {
-    opacity: 0.5;
-}
-
-/* ajuste pra telas menores */
+/* ajuste para telas menores */
 @media (max-width: 768px) {
     .cont-intro,
     .cont-aboutme,
@@ -285,7 +231,6 @@ body, html a {
 @media (max-width: 480px) {
     .arts-grid, .cat-grid {
         display: flex;
-        flex-direction: row;
         overflow-x: scroll;
         gap: 10px;
     }
