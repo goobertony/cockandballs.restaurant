@@ -1,0 +1,253 @@
+@font-face {
+    font-family: 'Pixeloid Sans';
+    src: url(font/PixeloidSans-mLxMm.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* cores */
+    --w: #ffffff;
+    --b: #000000;
+    --btn: #2387d8;
+    --activated: #16f050;
+    --btn-gradient-start: #af40ff;
+    --btn-gradient-end: #5b42f3;
+    --gradient-start: #535557e6;
+    --gradient-end: #0e0f0fe6;
+    --bsk: #16e5e5;
+    --tg: #11b2b2;
+    --rd: #FF5700;
+    --px: #d12e2e;
+    --gh: #24292e;
+    --x: #1b1b1b;
+}
+
+/* website config */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url(images/bg.webp);
+    background-size: cover;
+    font-family: "Pixeloid Sans", sans-serif;
+}
+
+body, html p, h1, h2, h3, h4, h5, h6 {
+    color: var(--w);
+}
+
+body, html a {
+    color: var(--btn);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.cont-aboutme h6 {
+    margin: -15px 0 5px;
+}
+
+.blank {
+    opacity: 0;
+}
+
+/* containers */
+.cont-intro,
+.cont-aboutme,
+.cont-stuffilike,
+.cont-howitstarted,
+.cont-social,
+.cont-code,
+.cont-arts,
+.cont-cat,
+.cont-projects {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
+.cont-aboutme {
+    align-items: flex-start;
+}
+
+.cont-aboutme p {
+    margin: 5px 0;
+}
+
+.cont-social a, button {
+    margin: 10px 0;
+}
+
+/* buttons */
+button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    font-family: "Pixeloid Sans", sans-serif;
+    transition-duration: 0.4s;
+}
+
+.cont-aboutme button,
+.cont-projects button,
+.cont-stuffilike button {
+    background-image: linear-gradient(144deg, var(--btn-gradient-start) 30%, var(--btn-gradient-end) 100%);
+    color: var(--w);
+}
+
+.btn-bsk button {
+    background-color: var(--bsk);
+    color: var(--b);
+}
+
+.btn-tg button {
+    background-color: var(--tg);
+    color: var(--b);
+}
+
+.btn-rd button {
+    background-color: var(--rd);
+    color: var(--b);
+}
+
+.btn-px button {
+    background-color: var(--px);
+    color: var(--w);
+}
+
+.btn-gh button {
+    background-color: var(--gh);
+    color: var(--w);
+}
+
+.btn-x button {
+    background-color: var(--x);
+    color: var(--w);
+}
+
+.btn-bsk button:hover,
+.btn-tg button:hover,
+.btn-rd button:hover,
+.btn-px button:hover,
+.btn-gh button:hover,
+.btn-x button:hover {
+    background-color: var(--btn-gradient-start);
+}
+
+/* image grids */
+.arts-grid, .cat-grid, .scroll-item, .scroll-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* images */
+.arts-grid img, 
+.cat-grid img, 
+.cont-arts img, 
+.cont-cat img, 
+.cont-projects img,
+.cont-aboutme img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.cont-aboutme img {
+    max-width: 165px;
+}
+
+/* estilos */
+.cont-projects {
+    text-align: center;
+}
+
+.cont-projects h3,
+.cont-projects a {
+    text-align: center;
+}
+
+.cont-stuffilike {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.cont-projects p {
+    text-align: left;
+}
+
+.cont-projects a {
+    margin: 10px 0;
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    opacity: 1;
+    transition: background-color 0.3s ease;
+}
+
+.cont-projects img {
+    max-height: 400px; 
+    object-fit: cover;
+    margin: 10px auto;
+}
+
+/* social media links */
+.cont-social a,
+.cont-aboutme a,
+.cont-projects a {
+    margin: 10px 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.cont-social a:hover {
+    text-decoration: underline;
+}
+
+/* ajuste para telas menores */
+@media (max-width: 768px) {
+    .cont-intro,
+    .cont-aboutme,
+    .cont-howitstarted,
+    .cont-social,
+    .cont-code,
+    .cont-arts,
+    .cont-cat,
+    .cont-projects {
+        width: 90%; 
+        padding: 10px; 
+    }
+
+    .arts-grid, .cat-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .arts-grid, .cat-grid {
+        display: flex;
+        overflow-x: scroll;
+        gap: 10px;
+    }
+
+    .arts-grid img, .cat-grid img {
+        width: 70%;
+        flex-shrink: 0;
+    }
+
+    .cont-arts img, .cont-cat img {
+        max-width: 100%;
+    }
+}
