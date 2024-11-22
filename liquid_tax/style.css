@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Pixeloid Sans';
+    src: url(font/PixeloidSans-mLxMm.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* cores */
+    --w: #ffffff;
+    --btn: #2387d8;
+    --activated: #16f050;
+    --gradient-start: #535557e6;
+    --gradient-end: #0e0f0fe6;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url(images/bg.webp);
+    background-size: 100%;
+    font-family: "Pixeloid Sans", sans-serif;
+}
+
+body, html p, h1 {
+    color: var(--w);
+}
+
+body, html a {
+    color: var(--btn);
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.main img {
+    width: 50%;
+    border-radius: 5px;
+}
+
+.main {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-image: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
+@media (max-width: 768px) {
+    .main {
+        width: 90%; 
+        padding: 10px; 
+    }
+}
