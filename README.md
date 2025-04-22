@@ -2,4 +2,4 @@
 
 the best website of the internet (sfw)
 
-access it here - [https://cockandballs.resturant](https://cockandballs.restaurant/)
+access it here - [https://cockandballs.restaurant](https://cockandballs.restaurant/)
