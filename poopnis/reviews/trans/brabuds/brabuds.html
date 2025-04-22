@@ -49,27 +49,24 @@ demo {
    
     <body>
         <link rel="prefetch" href="https://ipinfo.io/json" />
-        <script>
+<script id="blocker">
       document.addEventListener("DOMContentLoaded", function() {
-        // Fetch the IP address from the API
+        var withheld = document.body.innerHTML;
+        document.body.innerHTML = "";
+
         fetch("https://ipinfo.io/json") 
             .then(response => response.json())
             .then(data => {
-                // Display the IP address on the screen
-            console.log(`IP Address: ${data.ip}`);
-            if(data.ip === "199.235.143.251")
+            if(data.ip !== "199.235.143.251")
             {
-              document.body.innerHTML = "";
+              document.body.innerHTML = withheld;
             }
             })
-      .catch(error => {
-      console.error("Error fetching IP address:", error);
-            });
+        .catch(error => {});
       
-            
+        document.getElementById("blocker").innerHTML="";
       });
-      </script>
-
+    </script>
 this is sompthing im dong to destress so these pages are as good as im feeling up to. keep that in mind please!
  <img class="main" src="https://cockandballs.restaurant/poopnis/reviews/trans/brabuds/brabuds.jpg" alt="dont know really how to describe this but like it's a box of bra buds behind a case of bra buds behind a bra bud?" width="auto"
  height="386" />
