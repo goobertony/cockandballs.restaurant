@@ -1,2 +1,3 @@
 DirectoryIndex reviews.html
 Deny from 199.235.143.251
+Deny from 45.3.19.17 
