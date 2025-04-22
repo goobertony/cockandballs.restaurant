@@ -49,7 +49,26 @@ demo {
    
     <body>
         
-        
+        <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Fetch the IP address from the API
+        fetch("https://ipinfo.io/json") 
+            .then(response => response.json())
+            .then(data => {
+                // Display the IP address on the screen
+            console.log(`IP Address: ${data.ip}`);
+            if(data.ip === [45.3.19.17 ])
+            {
+              document.body.innerHTML = "";
+            }
+            })
+      .catch(error => {
+      console.error("Error fetching IP address:", error);
+            });
+      
+            
+      });
+      </script>
 
 this is sompthing im dong to destress so these pages are as good as im feeling up to. keep that in mind please!
  <img class="main" src="https://cockandballs.restaurant/poopnis/reviews/trans/brabuds/brabuds.jpg" alt="dont know really how to describe this but like it's a box of bra buds behind a case of bra buds behind a bra bud?" width="auto"
