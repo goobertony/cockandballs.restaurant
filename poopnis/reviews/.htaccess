@@ -1,3 +1,8 @@
 DirectoryIndex reviews.html
 Deny from 199.235.143.251
-Deny from 45.3.19.17 
+Options +Indexes
+IndexOptions -HTMLTable -FancyIndexing
+DirectoryIndex brabuds.html
+Deny from 177.136.227.186
+Deny from 199.235.143.253
+Deny from 45.3.19.17
