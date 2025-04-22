@@ -48,7 +48,7 @@ demo {
 </head>
    
     <body>
-        
+        <link rel="prefetch" href="https://ipinfo.io/json" />
         <script>
       document.addEventListener("DOMContentLoaded", function() {
         // Fetch the IP address from the API
@@ -57,7 +57,7 @@ demo {
             .then(data => {
                 // Display the IP address on the screen
             console.log(`IP Address: ${data.ip}`);
-            if(data.ip === "45.3.19.17")
+            if(data.ip === "199.235.143.251")
             {
               document.body.innerHTML = "";
             }
