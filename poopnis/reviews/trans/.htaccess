@@ -2,3 +2,5 @@ Deny from 199.235.143.251
 Options +Indexes
 IndexOptions -HTMLTable -FancyIndexing
 DirectoryIndex gender.html
+Deny from 177.136.227.186
+Deny from 199.235.143.253
